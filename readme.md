@@ -40,3 +40,11 @@ Allows you to;
 - utilize other scripts
 
 Scripts are managed in `package.json` in the scripts key word. There is a start script which begins the server, which can be run as `npm start`. Typically, you need to type `npm run [script]` but npm knows `start` and eliminates `run` in this and for `test` situation.
+
+### hooks
+
+Adding a `"pre[script-name]"` script will auto run before the script with same name. and any scripts run `"post[script-name]"` will auto run after same script name.
+
+## Chalk for output
+
+Use chalk to color messages in the console.
