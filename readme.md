@@ -48,3 +48,15 @@ Adding a `"pre[script-name]"` script will auto run before the script with same n
 ## Chalk for output
 
 Use chalk to color messages in the console.
+
+## Babel
+
+Babel transpiles JavaScript.
+
+two options to config; `.babelrc` or `package.json`. We're going to go with `.babelrc`
+
+Babel comes with presets. There are many different presets and plugins, but the only one we need to set is `"latest"` so we keep with the latest ES.
+
+As a simple example of Babel's influence, notice the commit history when we add Babel in that we change the chalk from Common JS require into ES6 `import` syntax.
+
+Notice also the introduction of `babel-node` which transpiles code.
