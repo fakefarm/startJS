@@ -86,3 +86,52 @@ http://adamwdraper.github.com/Numeral-js/
 - const instead of let
 - import [Module] from '.filepath'
 - backticks and `${}` for string interpolation
+
+## source maps
+
+sourcemaps map bundled, transpiled, and minified code back to the original source! They are part of the build. They are only downloaded if you open developer tools because they are big files!
+
+`devtool` is the entry point for creating source maps and there are many options. According to Vue template, `#cheap-module-eval-source-map` is faster for development
+
+## Linters
+Linters review code for errors and adherence to enforce consistency and avoid mistakes.  ESLint is highly configurable with decisions to be made around the following topics;
+
+### File configuration format
+
+There are 5 different file formats that can be used for configuration in addition to writing it inside package.json. They are all named `.eslintrc` but the decision comes in which file extention to use. We'll go with `.eslintrc.json`
+
+###  built-in rules
+
+Decide as a team which rules to follow. Here are the rules!
+https://eslint.org/docs/rules/
+
+###  warnings & errors
+
+Warnings can continue development and can be ignored. Errors break the build and cannot be ignored. Base decision on context.
+
+###  plugins
+
+Plugins add additional created functionality for specific environments. This will be a Vue starter kit so it will use https://github.com/vuejs/eslint-plugin-vue
+
+###  amount of presets
+
+There are some common community preset that can be used. Some include AirBnb and Standard JS
+
+## Linting watching files
+
+ESLint does not automatically watch files on save. However, that is a feature we want in our workflow. Time for another piece to the puzzle.
+
+### eslint-loader vs. eslint-watch
+There are two options; Eslint-loader is a webpack config. eslint-watch is an npm package that adds file watch and is not tied to webpack. It has better warning/error formatting and displays a clean success message when things are up to par. Eslint-watch also lints tests and build scripts.
+
+### level numbers
+
+ESlint sets levels
+
+0 = ignore
+1 = warning
+2 = error
+
+## JS observations
+
+It should come as no surprise that JS prefers to be verbose and granular. As such, there are aspects of tasks that are sometimes broken down beyond what may be intuitive. For example, to have eslint-watch to watch files, you need to pass `--watch` as an argument to what you want to watch as we do in the lint:watch script `"lint:watch": "npm run lint -- --watch"`
