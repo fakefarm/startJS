@@ -135,3 +135,34 @@ ESlint sets levels
 ## JS observations
 
 It should come as no surprise that JS prefers to be verbose and granular. As such, there are aspects of tasks that are sometimes broken down beyond what may be intuitive. For example, to have eslint-watch to watch files, you need to pass `--watch` as an argument to what you want to watch as we do in the lint:watch script `"lint:watch": "npm run lint -- --watch"`
+
+Also note, that the JS community works in small projects that all collectively work together. The good news, there are a lot of options. So, make sure you know what you need to do, then find a library that clearly explains the solution and implementation. As long as it passes public scrutiny, it's a good risk.
+
+## Testing
+When it comes to testing JS, there are 6 key decisions to be made;
+
+### Testing framework
+use jasmine or mocha
+
+### Assertion libraries
+- jasmine has built in assertions. Mocha does not and thus needs something like chai
+
+### Helper Libraries
+- jsdom, is a dom on the server for tests
+- cheerio - is like jquery for the server
+
+### Where to Run tests
+If we want to run in the browser - then karma and testem
+If we want headless - then phantomJS
+In-memory dom (JSDOM creates a DOM in memory, a lighter version of phantomJS)
+
+### Where do test files belong
+The initial assumption is to follow conventions of other frameworks - like what Rails does with it's own test file. However, because of the modularity of JS, another approach would be to keep the test file inside the item being tested. Really. As in...
+
+```
+/item
+  file.js
+  file.test.js
+```
+
+It makes sense in that a unit test should be opened when code is being worked on. There is also the advantage reducing directories. I like this approach enough to try it out.
