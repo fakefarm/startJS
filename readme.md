@@ -60,3 +60,29 @@ Babel comes with presets. There are many different presets and plugins, but the 
 As a simple example of Babel's influence, notice the commit history when we add Babel in that we change the chalk from Common JS require into ES6 `import` syntax.
 
 Notice also the introduction of `babel-node` which transpiles code.
+
+## Webpack
+
+Webpack is a Bundler. Bundlers manage importing and requiring code as needed. The current popular options are browserify, webpack, rollup, and jspm.
+
+The benefit of webpack is it can bundle more than js. It can also manage CSS, images, and fonts. Webpack's target is the web and rolling up all js files into a single file.
+
+We'll have webpack.config.js files for each environment. Currently we only have `webpack.config.js`. This is how we configure Webpack accordingly.
+
+Once a webpack loader is defined, the next step is to reference it in the entry file. In this current situation, we have `index.css` and it is imported in `index.js` as `import './index.css'`. Pretty slick!
+
+### Development memory file
+In `webpack.config.js` there is a file named `bundle.js`. It is not an actual file in the directory tree, but a file created in memory during development. It is used for development.
+
+## numeral module
+
+A javascript library for formatting and manipulating numbers.
+
+http://numeraljs.com/
+
+http://adamwdraper.github.com/Numeral-js/
+
+## ES6 (2015) additions
+- const instead of let
+- import [Module] from '.filepath'
+- backticks and `${}` for string interpolation
