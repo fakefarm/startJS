@@ -1,4 +1,5 @@
 # start js
+[![Build Status](https://travis-ci.org/fakefarm/startJS.svg?branch=master)](https://travis-ci.org/fakefarm/startJS)
 
 let's build a starter kit for js
 
@@ -166,3 +167,18 @@ The initial assumption is to follow conventions of other frameworks - like what 
 ```
 
 It makes sense in that a unit test should be opened when code is being worked on. There is also the advantage reducing directories. I like this approach enough to try it out.
+
+
+## http
+
+Attempt to use fetch as it is built in.
+
+## mock http with json-schema-faker & json server
+use json-server to create a lightweight CRUD api simulation
+
+### json server
+Get a full fake REST API with zero coding in less than 30 seconds (seriously)
+https://github.com/typicode/json-server
+ 
+
+create a fake endpoint and have ability to CRUD it. The underlying dependencies include faker, chance, and regexp
